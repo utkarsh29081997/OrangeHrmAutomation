@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -46,8 +47,8 @@ public class TestBase {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
-	//	driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-		
+	//	driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS)
+		int year = Calendar.getInstance().get(Calendar.YEAR);	
 		driver.get(prop.getProperty("url"));
 	}
 
