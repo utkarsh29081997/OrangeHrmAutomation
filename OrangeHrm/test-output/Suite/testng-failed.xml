@@ -5,9 +5,9 @@
     <classes>
       <class name="com.orangehrm.testcases.AdminPageTest">
         <methods>
-          <include name="verifyAdminPage"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="sendUsername"/>
         </methods>
       </class> <!-- com.orangehrm.testcases.AdminPageTest -->
     </classes>

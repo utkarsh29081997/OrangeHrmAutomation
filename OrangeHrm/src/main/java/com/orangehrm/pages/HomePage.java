@@ -12,7 +12,7 @@ public class HomePage extends TestBase{
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[text()='Welcome Paul']")
+	@FindBy(xpath="//a[starts-with(text(),'Welcome')]")
 	WebElement Username;
 	
 	@FindBy(xpath="//b[text()='Admin']")
