@@ -68,31 +68,30 @@ public class AdminPage extends TestBase {
 		return result;
 	}
 
-	public void matchUsernameandEmpname(){
+	public List<String> matchUsernameandEmpname() {
 		Select select = new Select(driver.findElement(By.id("searchSystemUser_userType")));
 		select.selectByVisibleText("Admin");
 		searchbtn.click();
-		
+
 		List<WebElement> listofUsername = driver.findElements(By.xpath("//table[@class='table hover']//td[2]//a"));
 		List<WebElement> listofEmpname = driver.findElements(By.xpath("//table[@class='table hover']//td[4]"));
 		List<String> usernameregx = new ArrayList<String>();
-		
-		Iterator<WebElement> it = listofUsername.iterator();
-		
-		while(it.hasNext()){
-			String userName = it.next().getText();
-			String replaceUsername = userName.replaceAll("[_-.]*", " ");
-			usernameregx.add(replaceUsername);
+
+		Iterator<WebElement> userit = listofUsername.iterator();
+		Iterator<WebElement> empit = listofUsername.iterator();
+
+		while (userit.hasNext() && empit.hasNext()) {
+			String userName = userit.next().getText();
+			String empName = empit.next().getText();
+			String replaceUsername = userName.replace(".", " ");
+			if (empName.equals(replaceUsername)) {
+				usernameregx.add(replaceUsername);
+			}
+			else{
+				usernameregx.add("No Same Values Found");
+			}
 		}
-		
-		Iterator<String> it1 = usernameregx.iterator();
-		
-		while(it1.hasNext()){
-			System.out.println(it1.next());
-		}
-		
+		return usernameregx;
 	}
-	
-	
-	
+
 }

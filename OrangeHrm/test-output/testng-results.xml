@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="114388" started-at="2021-07-06T13:24:10Z" finished-at="2021-07-06T13:26:04Z">
+  <suite name="Default suite" duration-ms="39205" started-at="2021-07-08T20:18:07Z" finished-at="2021-07-08T20:18:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="114388" started-at="2021-07-06T13:24:10Z" finished-at="2021-07-06T13:26:04Z">
+    <test name="Default test" duration-ms="39205" started-at="2021-07-08T20:18:07Z" finished-at="2021-07-08T20:18:46Z">
       <class name="com.orangehrm.testcases.AdminPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@5442a311]" name="setup" is-config="true" duration-ms="110876" started-at="2021-07-06T13:24:10Z" finished-at="2021-07-06T13:26:01Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@5442a311]" name="setup" is-config="true" duration-ms="35061" started-at="2021-07-08T20:18:07Z" finished-at="2021-07-08T20:18:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="srchUserByRole()[pri:3, instance:com.orangehrm.testcases.AdminPageTest@5442a311]" name="srchUserByRole" duration-ms="1835" started-at="2021-07-06T13:26:01Z" finished-at="2021-07-06T13:26:03Z">
+        <test-method status="PASS" signature="similarUsernameandEmpname()[pri:4, instance:com.orangehrm.testcases.AdminPageTest@5442a311]" name="similarUsernameandEmpname" duration-ms="1954" started-at="2021-07-08T20:18:42Z" finished-at="2021-07-08T20:18:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- srchUserByRole -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@5442a311]" name="tearDown" is-config="true" duration-ms="1622" started-at="2021-07-06T13:26:03Z" finished-at="2021-07-06T13:26:04Z">
+        </test-method> <!-- similarUsernameandEmpname -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@5442a311]" name="tearDown" is-config="true" duration-ms="2134" started-at="2021-07-08T20:18:44Z" finished-at="2021-07-08T20:18:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

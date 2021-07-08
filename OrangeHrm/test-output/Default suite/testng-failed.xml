@@ -5,9 +5,9 @@
     <classes>
       <class name="com.orangehrm.testcases.AdminPageTest">
         <methods>
+          <include name="similarUsernameandEmpname"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="srchUserByRole"/>
         </methods>
       </class> <!-- com.orangehrm.testcases.AdminPageTest -->
     </classes>

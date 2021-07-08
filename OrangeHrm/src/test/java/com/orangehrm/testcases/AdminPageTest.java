@@ -1,5 +1,9 @@
 package com.orangehrm.testcases;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -64,6 +68,16 @@ public class AdminPageTest extends TestBase{
 		String Result = admin.srchUserbyRole(); 
 		System.out.println(Result);
 		Assert.assertEquals(Result, "Linda.Anderson");
+	}
+	
+	@Test(priority=4)
+	public void similarUsernameandEmpname(){
+		List<String> list = new ArrayList<String>();
+		list.addAll(admin.matchUsernameandEmpname());
+		Iterator<String> it = list.iterator();
+		while(it.hasNext()){
+			System.out.println(it.next());
+		}
 	}
 
 	
