@@ -78,7 +78,7 @@ public class AdminPage extends TestBase {
 		List<String> usernameregx = new ArrayList<String>();
 
 		Iterator<WebElement> userit = listofUsername.iterator();
-		Iterator<WebElement> empit = listofUsername.iterator();
+		Iterator<WebElement> empit = listofEmpname.iterator();
 
 		while (userit.hasNext() && empit.hasNext()) {
 			String userName = userit.next().getText();
@@ -86,9 +86,6 @@ public class AdminPage extends TestBase {
 			String replaceUsername = userName.replace(".", " ");
 			if (empName.equals(replaceUsername)) {
 				usernameregx.add(replaceUsername);
-			}
-			else{
-				usernameregx.add("No Same Values Found");
 			}
 		}
 		return usernameregx;
