@@ -8,7 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.orangehrm.testbase.TestBase;
 
@@ -36,6 +39,29 @@ public class AdminPage extends TestBase {
 	@FindBy(xpath = "//div[@Id='customerList']//tbody//descendant::a[contains(text(),'Admin')]")
 	WebElement srchResult;
 
+	@FindBy(id = "btnAdd")
+	WebElement addNewUserbtn;
+	
+	@FindBy( id = "systemUser_employeeName_empName")
+	WebElement inputEmpname;
+
+	@FindBy( id = "systemUser_userName")
+	WebElement inputnewUsername;
+	
+	@FindBy( id = "systemUser_password")
+	WebElement inputUserpassword;
+
+	@FindBy( id = "systemUser_confirmPassword")
+	WebElement inputUsercnfrmpassword;
+
+	@FindBy( id = "btnSave")
+	WebElement saveButton;
+	
+//	@FindBy(xpath = "//div[@class='message success fadable']")
+	String successMsg = "//div[@class='message success fadable']";
+	
+	// message success fadable
+	
 	String beforexpath = "//div[@Id='customerList']//tbody//descendant::a[contains(text(),'" + prop.getProperty("name")
 			+ "')]";
 
@@ -91,4 +117,21 @@ public class AdminPage extends TestBase {
 		return usernameregx;
 	}
 
+	public String AddNewUser(String userRole, String empName, String userName, String password, String cnfrmpassword) {
+		addNewUserbtn.click();
+		Select select = new Select(driver.findElement(By.id("systemUser_userType")));
+		select.selectByVisibleText(userRole);
+		inputEmpname.sendKeys(empName);
+		inputnewUsername.sendKeys(userName);
+		inputUserpassword.sendKeys(password);
+		inputUsercnfrmpassword.sendKeys(cnfrmpassword);
+		saveButton.click();
+	//	System.out.println(verifyAdminpage());
+//		WebDriverWait wait = new WebDriverWait(driver, 10);
+//		WebElement sucsMsg;
+//		sucsMsg = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='message success fadable']")));
+		String Msg = driver.findElement(By.xpath(successMsg)).getText();
+		
+		return Msg;
+	}
 }
