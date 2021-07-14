@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import com.orangehrm.pages.LoginPage;
 import com.orangehrm.testbase.TestBase;
 
-@Listeners(com.orangehrm.listners.CustomListner.class)
+//@Listeners(com.orangehrm.listners.CustomListner.class)
 public class LoginPageTest extends TestBase {
 	LoginPage login;
 

@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -56,6 +58,9 @@ public class AdminPage extends TestBase {
 
 	@FindBy( id = "btnSave")
 	WebElement saveButton;
+	
+	@FindBy(xpath = "//b[contains(text(),'PIM')]")
+	WebElement pathforPIMpage;
 	
 //	@FindBy(xpath = "//div[@class='message success fadable']")
 	String successMsg = "//div[@class='message success fadable']";
@@ -117,7 +122,7 @@ public class AdminPage extends TestBase {
 		return usernameregx;
 	}
 
-	public String AddNewUser(String userRole, String empName, String userName, String password, String cnfrmpassword) {
+	public String AddNewUser(String userRole, String empName, String userName, String password, String cnfrmpassword) throws InterruptedException {
 		addNewUserbtn.click();
 		Select select = new Select(driver.findElement(By.id("systemUser_userType")));
 		select.selectByVisibleText(userRole);
@@ -125,7 +130,9 @@ public class AdminPage extends TestBase {
 		inputnewUsername.sendKeys(userName);
 		inputUserpassword.sendKeys(password);
 		inputUsercnfrmpassword.sendKeys(cnfrmpassword);
+		Thread.sleep(6000);
 		saveButton.click();
+	//	Thread.sleep(6000);
 	//	System.out.println(verifyAdminpage());
 //		WebDriverWait wait = new WebDriverWait(driver, 10);
 //		WebElement sucsMsg;
@@ -133,5 +140,12 @@ public class AdminPage extends TestBase {
 		String Msg = driver.findElement(By.xpath(successMsg)).getText();
 		
 		return Msg;
+	}
+	
+	public PIMpage PIMsection(){	
+		Actions action = new Actions(driver);
+		Action mouseOverPIM = action.click(pathforPIMpage).build();
+		mouseOverPIM.perform();
+		return new PIMpage();
 	}
 }

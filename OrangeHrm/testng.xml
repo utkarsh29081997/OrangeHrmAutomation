@@ -7,6 +7,7 @@
    <!--  <class name="com.orangehrm.testcases.LoginPageTest"></class>
       <class name="com.orangehrm.testcases.HomePageTest"/> -->
       <class name="com.orangehrm.testcases.AdminPageTest"></class>
+<!--       <class name="com.orangehrm.testcases.PIMpageTest"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

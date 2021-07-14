@@ -2,12 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
+    <parameter name="Username" value="Utkarsh"/>
     <classes>
       <class name="com.orangehrm.testcases.AdminPageTest">
         <methods>
+          <include name="similarUsernameandEmpname"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="sendUsername"/>
         </methods>
       </class> <!-- com.orangehrm.testcases.AdminPageTest -->
     </classes>

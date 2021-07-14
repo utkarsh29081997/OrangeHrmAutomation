@@ -7,12 +7,12 @@ import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.orangehrm.dataprovider.dataProviderforMethod;
 import com.orangehrm.pages.AdminPage;
 import com.orangehrm.pages.HomePage;
 import com.orangehrm.pages.LoginPage;
@@ -82,19 +82,20 @@ public class AdminPageTest extends TestBase{
 		}
 	}
 	
-	@Test(priority=5, dataProvider = "New User")
-	public void addNewUser(String userRole, String empName, String userName, String password, String cnfrmpassword){
+	
+	@Test(priority=5, dataProvider = "New User",dataProviderClass = dataProviderforMethod.class)
+	public void addNewUser(String userRole, String empName, String userName, String password, String cnfrmpassword) throws InterruptedException{
 		String newUserSuccessmsg = admin.AddNewUser(userRole, empName, userName, password, cnfrmpassword);
 		System.out.println(newUserSuccessmsg);
 	}
 	
-	@DataProvider(name = "New User")
-	public Object[][] newUserValues(){
-		return new Object[][]{
-			{"ESS", "Alice Duval","vick.mehtaaaa","Abcd12@12","Abcd12@12"},
-			{"Admin", "Anthony Nolan","rahul.bharadwajjj","Abcd12@12","Abcd12@12"},
-		};
-	}
+//	@DataProvider(name = "New User")
+//	public Object[][] newUserValues(){
+//		return new Object[][]{
+//			{"ESS", "Alice Duval","vicy.mehta","Abcd12@12","Abcd12@12"},
+//			{"Admin", "Anthony Nolan","roshan.bharadwaj","Abcd12@12","Abcd12@12"},
+//		};
+//	}
 	
 	@AfterMethod
 	public void tearDown(){
