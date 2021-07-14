@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="addNewUser" invocation-numbers="1"/>
+          <include name="addNewUser" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.orangehrm.testcases.AdminPageTest -->
     </classes>

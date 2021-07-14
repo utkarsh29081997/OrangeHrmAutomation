@@ -26,7 +26,7 @@ public class PIMpageTest extends TestBase{
 		System.out.println("Browser Launched");
 		login.loginTest(prop.getProperty("uname"),prop.getProperty("pass"));
 		System.out.println("Logged In");
-		admin.PIMsection();
+	//	admin.PIMsection();
 	}
 	
 	@Test

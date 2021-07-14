@@ -15,10 +15,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class TestBase {
-	
-	public static WebDriver driver;
-	public static Properties prop;
+import com.orangehrm.Testutils.TestUtils;
+
+public class TestBase extends TestUtils {
 	
 	public TestBase(){
 		prop = new Properties();

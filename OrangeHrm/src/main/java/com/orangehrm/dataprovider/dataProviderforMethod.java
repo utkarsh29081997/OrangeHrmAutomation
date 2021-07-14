@@ -20,8 +20,8 @@ public class dataProviderforMethod {
 	public Object[][] valuesfordifferentMethods(Method m){
 		if(m.getName().equalsIgnoreCase("addNewUser")){
 		return new Object[][]{
-			{"ESS", "Alice Duval","vix.mehta","Abcd12@12","Abcd12@12"},
-			{"Admin", "Anthony Nolan","rush.bharadwaj","Abcd12@12","Abcd12@12"},
+			{"ESS", "Alice Duval","poona.mehta","Abcd12@12","Abcd12@12"},
+			{"Admin", "Anthony Nolan","paya.bharadwaj","Abcd12@12","Abcd12@12"},
 		};
 		}
 		else{

@@ -1,19 +1,18 @@
 package com.orangehrm.pages;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.tools.ant.taskdefs.Length;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import com.orangehrm.testbase.TestBase;
 
@@ -91,7 +90,7 @@ public class AdminPage extends TestBase {
 	}
 
 	public String srchUserbyRole() {
-		Select select = new Select(driver.findElement(By.id("searchSystemUser_userType")));
+		select = new Select(driver.findElement(By.id("searchSystemUser_userType")));
 		select.selectByVisibleText("Admin");
 		searchbtn.click();
 		String result = driver.findElement(By.xpath(beforexpath)).getText();
@@ -100,7 +99,7 @@ public class AdminPage extends TestBase {
 	}
 
 	public List<String> matchUsernameandEmpname() {
-		Select select = new Select(driver.findElement(By.id("searchSystemUser_userType")));
+		select = new Select(driver.findElement(By.id("searchSystemUser_userType")));
 		select.selectByVisibleText("Admin");
 		searchbtn.click();
 
@@ -124,12 +123,39 @@ public class AdminPage extends TestBase {
 
 	public String AddNewUser(String userRole, String empName, String userName, String password, String cnfrmpassword) throws InterruptedException {
 		addNewUserbtn.click();
-		Select select = new Select(driver.findElement(By.id("systemUser_userType")));
+		select = new Select(driver.findElement(By.id("systemUser_userType")));
 		select.selectByVisibleText(userRole);
-		inputEmpname.sendKeys(empName);
-		inputnewUsername.sendKeys(userName);
-		inputUserpassword.sendKeys(password);
-		inputUsercnfrmpassword.sendKeys(cnfrmpassword);
+		
+		// Capturing all the Elements from WebPage
+		WebElement elements[] = {inputEmpname,inputnewUsername,inputUserpassword,inputUsercnfrmpassword}; 
+		
+		// Arguments to be passed to the elements
+		String arguments[] = {empName,userName,password,cnfrmpassword};
+		
+		// Adding elements from WebElement array as Key and elements from arguments as Values
+		//  Used Map because HashMap is not synchronized 
+		Map<WebElement, String> hm = new HashMap<WebElement, String>();
+		for(int i = 0;i<=elements.length-1;i++){
+			for(int j=i;j<=i;j++){
+				System.out.println(arguments[j]);
+				hm.put(elements[i], arguments[j]);
+			}
+		}
+		
+		// Sending Key and Value from HashMap
+		for(Map.Entry entry : hm.entrySet()){
+			System.out.println(entry.getKey()+" "+entry.getValue());
+			WebElement element =  (WebElement) entry.getKey();
+			highlightElement(element);
+			String valuetoSend = (String) entry.getValue();
+			element.sendKeys(valuetoSend);
+			unhighlightElement(element);
+		}
+		
+//		inputEmpname.sendKeys(empName);
+//		inputnewUsername.sendKeys(userName);
+//		inputUserpassword.sendKeys(password);
+//		inputUsercnfrmpassword.sendKeys(cnfrmpassword);
 		Thread.sleep(6000);
 		saveButton.click();
 	//	Thread.sleep(6000);
@@ -142,10 +168,9 @@ public class AdminPage extends TestBase {
 		return Msg;
 	}
 	
-	public PIMpage PIMsection(){	
-		Actions action = new Actions(driver);
-		Action mouseOverPIM = action.click(pathforPIMpage).build();
-		mouseOverPIM.perform();
-		return new PIMpage();
-	}
+//	public PIMpage PIMsection(){	
+//		Action mouseOverPIM = action.moveToElement(pathforPIMpage).build();
+//		mouseOverPIM.perform();
+//		return new PIMpage();
+//	}
 }

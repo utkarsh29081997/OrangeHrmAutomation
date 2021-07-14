@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="5" total="7" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="99144" started-at="2021-07-14T07:15:54Z" finished-at="2021-07-14T07:17:33Z">
+  <suite name="Default suite" duration-ms="155151" started-at="2021-07-14T13:46:48Z" finished-at="2021-07-14T13:49:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="99144" started-at="2021-07-14T07:15:54Z" finished-at="2021-07-14T07:17:33Z">
+    <test name="Default test" duration-ms="155151" started-at="2021-07-14T13:46:48Z" finished-at="2021-07-14T13:49:23Z">
       <class name="com.orangehrm.testcases.AdminPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@548e7350]" name="setup" is-config="true" duration-ms="32159" started-at="2021-07-14T07:15:54Z" finished-at="2021-07-14T07:16:26Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@e25b2fe]" name="setup" is-config="true" duration-ms="47923" started-at="2021-07-14T13:46:48Z" finished-at="2021-07-14T13:47:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addNewUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.orangehrm.testcases.AdminPageTest@548e7350]" name="addNewUser" duration-ms="13022" started-at="2021-07-14T07:16:26Z" data-provider="New User" finished-at="2021-07-14T07:16:39Z">
+        <test-method status="PASS" signature="addNewUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.orangehrm.testcases.AdminPageTest@e25b2fe]" name="addNewUser" duration-ms="14724" started-at="2021-07-14T13:47:36Z" data-provider="New User" finished-at="2021-07-14T13:47:51Z">
           <params>
             <param index="0">
               <value>
@@ -42,15 +42,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNewUser -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@548e7350]" name="tearDown" is-config="true" duration-ms="1448" started-at="2021-07-14T07:16:39Z" finished-at="2021-07-14T07:16:41Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@e25b2fe]" name="tearDown" is-config="true" duration-ms="2071" started-at="2021-07-14T13:47:51Z" finished-at="2021-07-14T13:47:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@548e7350]" name="setup" is-config="true" duration-ms="26695" started-at="2021-07-14T07:16:41Z" finished-at="2021-07-14T07:17:08Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@e25b2fe]" name="setup" is-config="true" duration-ms="73373" started-at="2021-07-14T13:47:53Z" finished-at="2021-07-14T13:49:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addNewUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.orangehrm.testcases.AdminPageTest@548e7350]" name="addNewUser" duration-ms="21725" started-at="2021-07-14T07:17:08Z" data-provider="New User" finished-at="2021-07-14T07:17:29Z">
+        <test-method status="PASS" signature="addNewUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:5, instance:com.orangehrm.testcases.AdminPageTest@e25b2fe]" name="addNewUser" duration-ms="14988" started-at="2021-07-14T13:49:06Z" data-provider="New User" finished-at="2021-07-14T13:49:21Z">
           <params>
             <param index="0">
               <value>
@@ -81,7 +81,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNewUser -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@548e7350]" name="tearDown" is-config="true" duration-ms="3988" started-at="2021-07-14T07:17:29Z" finished-at="2021-07-14T07:17:33Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orangehrm.testcases.AdminPageTest@e25b2fe]" name="tearDown" is-config="true" duration-ms="1991" started-at="2021-07-14T13:49:21Z" finished-at="2021-07-14T13:49:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
